@@ -1,7 +1,7 @@
 ---
 name: skill-onboarding
 description: After a user first uses a skill, actually run it once and hand back a "usage card" that surfaces the capabilities buried in its docs. **Pairs with skill-creator**: right after creating or editing a skill with it, run this flow to verify the first run and produce a card, closing the "build → run → card → feedback" loop. CLI tool skills are the priority — one command-line tool is often split across a dozen skills (21 lark-* skills all wrap a single lark-cli), so this merges them into one card and diffs the CLI's own inventory against local skills to find capabilities the user never knew existed. Triggers: first use of a skill, just finished using one, just created or edited a skill with skill-creator, or "what else can this skill do", "how do I use X", "what am I missing", "what else can this CLI do", "what commands don't I know about". Behavior is configurable (language, auto-trigger, card length, exclusion list). Not for skill quality scoring.
-version: 3.2.0
+version: 3.3.0
 agent_created: true
 license: MIT
 metadata:
@@ -104,41 +104,41 @@ Environment problems (shell, paths, wrapper) must read "environment issue, worke
 ### 3 · Write the card
 
 ```
-<✅ Verified working ｜ ⚠️ Partially working: reason ｜ ❌ Could not verify: reason>
+<✅ Working ｜ ⚠️ Partially working, reason ｜ ❌ Could not verify, reason>
 <One line: what it's good at, what it isn't>
 
-🎯 The three moves you'll use most
-1. 「what to say」→ what you get
-2. ...
-3. ...
+What you can do
+    action      what you get
+    action      what you get
 
-💡 Things you probably didn't know it could do
-- 「what to say」→ why it's worth knowing
+What most people miss
+    phrase      why it's worth knowing
+    phrase      why it's worth knowing
 
-🔑 If you remember one thing, remember this
-<the shortest possible phrase>
+If you remember one thing
+    the shortest phrase
 ```
 
-**Pick the second section's heading by nature**: `🎯 The three moves you'll use most` for tools; `🧭 When it comes into play` for methods and guidelines.
+**Pick the second heading by nature**: `What you can do` for tools; `When it comes into play` for methods and guidelines.
 
 **A family of skills gets a family card**: the second section becomes a "what do you want to do" list, grouped by what the user would actually say, **not by command or module name**:
 
 ```
-🧭 What do you want to do
-
-· Chat / groups      → send, search history, create groups, escalate
-· Set brand tone     → brand
-· Make a logo/banner → built into design
-· Build a deck       → built into design, with charts
+What you can do
+    Chat, groups        send, search history, create groups, escalate
+    Set brand tone      brand
+    Logos and banners   built into design
+    Decks and pitches   built into design, with charts
 ```
 
 **Rules**
 
 - **No paths, no filenames, no provenance.** Users want capability, not location.
+- **Write like a person.** Short sentences, concrete, spoken. Avoid "it's worth noting", "essentially", "this means that", "it comes as no surprise". No decorative emoji either, but keep the status marks ✅ / ⚠️ / ❌ since they carry information.
 - Every capability needs a **copy-pasteable phrase**. If you can't write one, it's still a feature description.
-- **Sections are a ceiling, not a quota.** If there's only one or two things to do, write one or two — the 💡 section can be absent entirely. Padding is fabrication.
+- **Sections are a ceiling, not a quota.** If there's only one or two things to do, write one or two. The "what most people miss" section can be absent entirely. Padding is fabrication.
 - Readable in one sitting: single skill ≤40 lines, family card ≤60.
-- For family cards, the 💡 section should lead with **diff findings**: what the tool supports vs what's installed locally — the gap is what the user never knew about.
+- For family cards, the "what most people miss" section should lead with **diff findings**: what the tool supports vs what's installed locally. The gap is what the user never knew about.
 - Any problem found must become an actionable next step, not just a complaint.
 
 **Archive**
