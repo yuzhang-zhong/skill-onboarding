@@ -183,14 +183,12 @@ python "<skill_dir>/scripts/onboarding_state.py" config reset          # 恢复�
 
 ## 环境备忘
 
-- Python 用托管解释器绝对路径（`python` 不在 PATH 时）：
-  `C:/Users/Administrator/.workbuddy/binaries/python/versions/3.13.12/python.exe`
-- bash 工具链残缺：`ls` / `head` / `rm` 全部报 `command not found`，且 `rm` 会**静默失败**。
-  清目录改用 `node -e "require('fs').rmSync(p,{recursive:true,force:true})"`，列目录用 Node `fs.readdirSync`。
-- **`cd` 也不生效**——切了目录，脚本仍在原目录执行。需要指定工作目录时用 Node：
-  `node -e "require('child_process').execFileSync('<python>',['<script>'],{cwd:'<dir>',stdio:'inherit'})"`
-- 部分 CLI 的 `sh` wrapper 依赖 `dirname` / `sed`，在本机崩在 `Cannot find module 'c:\node_modules\...'`
-  （注意路径少了一截）。绕过 wrapper 直接调真实入口即可。
+- 脚本只用 Python 标准库，`python` / `python3` 直接跑；不在 PATH 就用你本地的解释器绝对路径。
+- **指定工作目录请用带 `cwd` 的执行方式，不要依赖 `cd`**——某些受限 shell 里 `cd` 不生效，
+  脚本仍在原目录执行；而不少 skill 脚本硬编码了 `./references/...` 这类相对路径。
+- 部分 CLI 的 `sh` wrapper 依赖 `dirname` / `sed`。工具链残缺的 shell 里会崩在
+  `Cannot find module '...\node_modules\...'`（路径少了一截，是 wrapper 没解析出目录）。
+  绕开 wrapper 直接调它指向的真实入口即可——**这属于环境问题，不是 skill 坏了**。
 
 ## 样例
 

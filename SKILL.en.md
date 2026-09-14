@@ -186,15 +186,15 @@ Hard to break: invalid values are rejected up front, and `config reset` always b
 
 ## Environment notes
 
-- Use the absolute path to the managed Python interpreter when `python` isn't on PATH:
-  `C:/Users/Administrator/.workbuddy/binaries/python/versions/3.13.12/python.exe`
-- The bash toolchain is broken here: `ls` / `head` / `rm` all report `command not found`, and `rm` **fails silently**.
-  Use `node -e "require('fs').rmSync(p,{recursive:true,force:true})"` to clean, and Node `fs.readdirSync` to list.
-- **`cd` doesn't take effect either** — you change directory, but the script still runs from the original one.
-  To set a working directory, go through Node:
-  `node -e "require('child_process').execFileSync('<python>',['<script>'],{cwd:'<dir>',stdio:'inherit'})"`
-- Some CLIs ship a `sh` wrapper depending on `dirname` / `sed`, which dies here with
-  `Cannot find module 'c:\node_modules\...'` (note the truncated path). Call the real entry point directly to bypass it.
+- The scripts are pure Python standard library — `python` / `python3` just works. If it isn't on PATH,
+  use the absolute path to your own interpreter.
+- **Set the working directory via a `cwd` option, not by relying on `cd`** — in some restricted shells
+  `cd` silently does nothing and the script still runs from the original directory. Plenty of skill
+  scripts hardcode relative paths like `./references/...`.
+- Some CLIs ship a `sh` wrapper depending on `dirname` / `sed`. On a shell with a broken toolchain it
+  dies with `Cannot find module '...\node_modules\...'` (note the truncated path — the wrapper failed
+  to resolve its own directory). Call the real entry point directly to bypass it —
+  **this is an environment problem, not a broken skill**.
 
 ## Example
 
