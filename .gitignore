@@ -1,0 +1,12 @@
+# 运行时数据，不进仓库
+state.json
+config.json
+cards/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS
+.DS_Store
+Thumbs.db
