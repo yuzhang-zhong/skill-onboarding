@@ -11,13 +11,11 @@
   <a href="README.zh-CN.md" title="简体中文">🇨🇳</a>
 </p>
 
-## You installed a pile of skills and use one of them
+## You have a pile of skills and use one of them
 
-Not your fault.
+Skills don't load all at once. When a session starts, only the name and a one-line description make it into context. The rest of the file gets read later, and only if something actually matches. A skill can document eight features and you'll only ever touch the first two. The other six stay invisible.
 
-Skills load progressively. At session start the agent sees a name and a description. The body is read later, and only if something matches. So a document describes eight features and you run into the first two. The other six you never find out about.
-
-This skill does one thing. After you actually use a skill for the first time, it runs the thing once, reads it once, and hands you a card with the part you were missing.
+That's the gap this skill closes. The first time you genuinely use a skill, it runs the thing for real, reads the whole file, and hands you a card covering the part you never found.
 
 ## Three steps
 
@@ -29,19 +27,19 @@ This skill does one thing. After you actually use a skill for the first time, it
 
 Those 21 Feishu skills sit on top of a single command. Those 7 design skills are parts of one tool.
 
-One card each is useless. You would get 21 fragments and still no picture. So they merge.
+A card per skill is pointless. You'd end up with 21 fragments and still no picture. So they get merged.
 
-Then it subtracts: what the tool supports, minus what is installed locally. What is left is the part you never knew about.
+Then it subtracts. What the tool supports, minus what you already have installed. Whatever's left is the part you never knew about.
 
 ## Three real cases
 
-These three cards were actually produced. Not mock-ups. Reproduced as written.
+The three cards below came out of real runs. Not mock-ups. Reproduced word for word.
 
 ### 1. You have 21 Feishu skills
 
-You want a table. You bounce between `lark-sheets`, `lark-base`, and `lark-drive` trying to guess. You want to send a message and cannot tell whether that is `lark-im` or `lark-unified`. You have seen all 21 names and never worked out how they relate.
+You want a table, so you bounce between `lark-sheets`, `lark-base`, and `lark-drive` trying to guess. You want to send a message and can't tell whether that's `lark-im` or `lark-unified`. You've seen all 21 names and never worked out how they relate.
 
-Run it once, and you get this:
+Run it once and you get this:
 
 ```
 ✅ Working. The CLI itself is fine, every self-check passes. Two things to note: the embedded docs trail the binary by one version, and the app identity currently in effect isn't the one named in the config.
@@ -65,7 +63,7 @@ What most people miss
     "agenda and tasks, both"             a built-in combo, one line for today or this week
     "publish this Markdown as a doc"     a full pipeline: import, upload images, move each one under its heading, add captions
     "sync this folder up"                directory-level mirroring and two-way sync, no file-by-file uploads
-    "pivot table and conditional format" the sheets domain runs deeper than you would think
+    "pivot table and conditional format" the sheets domain runs deeper than you'd think
 
 If you remember one thing
 
@@ -78,7 +76,7 @@ One line is enough: 21 skills, one tool.
 
 You remember it can flag words like "仿佛", "一丝", "缓缓" in Chinese prose. What else? No idea. When you installed it, why you stopped, also no idea.
 
-Run it once, and you get this:
+Run it once and you get this:
 
 ```
 ⚠️ Partially working. The core scanner runs fine, but the skill is disabled and won't trigger on its own, and the follow-up formatting step its docs mention isn't in the package.
@@ -102,13 +100,13 @@ If you remember one thing
     "scan this for AI flavor, fix the heavy parts"
 ```
 
-Line one does not cover for it: the skill is disabled, you have to enable it before it triggers.
+The first line doesn't soften it: the skill is disabled and won't fire until you enable it.
 
-### 3. You want a deck and do not know who to ask
+### 3. You want a deck and don't know who to ask
 
 `slides`, `design`, `design-system`, `ui-ux-pro-max`. All four look relevant. You picked `slides` at random, shipped something passable, and never checked the rest.
 
-Run it once, and you get this:
+Run it once and you get this:
 
 ```
 ✅ Working. The built-in lookup libraries check out, style, colour and industry libraries all return real results. Generation needs an external service key, not exercised here.
@@ -139,7 +137,7 @@ If you remember one thing
     "design a visual system for my brand, brief first"
 ```
 
-Seven design skills in one table. That last line about the dials, you would never have guessed.
+Seven design skills, one table. That last line about the dials, you'd never have guessed.
 
 All three cards in full are in [`examples/`](examples/).
 
@@ -163,7 +161,7 @@ If you remember one thing
     the shortest phrase
 ```
 
-Two or more skills in one group become a family card, and the second heading becomes a "what do you want to do" list, grouped by what you would actually say.
+When two or more skills belong together, you get a family card instead. The second heading turns into a list of what you might want to do, grouped by how you'd actually ask for it.
 
 No file paths, no filenames, no provenance anywhere in a card. You want the capability, not its address.
 
@@ -176,11 +174,11 @@ skill-creator      create a skill, edit a skill
 skill-onboarding   verify the first run afterwards, hand back one card
 ```
 
-Build, run, card, then take whatever the card exposed back to the skill. A missing dependency, docs that disagree with the code, an ability nobody wrote down clearly. That is what the next round fixes.
+Build, run, card, then take whatever the card exposed back to the skill. A missing dependency. Docs that disagree with the code. An ability nobody wrote down clearly. That's what the next round fixes.
 
 Pairing is on by default. After skill-creator creates or edits something, run this before moving on.
 
-The split is simple. Create, edit, and delete belong to skill-creator. Running and writing cards belong here. Scoring quality belongs to neither.
+The split is simple. Creating, editing, and deleting belong to skill-creator. Running and writing cards belong here. Scoring quality belongs to neither.
 
 ## Install
 
@@ -208,7 +206,7 @@ python scripts/onboarding_state.py config reset          # defaults
 | `exclude` | `[]` | Skills to skip |
 | `pair_with_skill_creator` | `true` | Verify after a skill is created or edited |
 
-The three cards above are the Chinese output, which is what this machine is configured for. Set `language` to `en` and you get the same cards in English.
+Those three cards above are in Chinese, because that's what this setup is configured for. Set `language` to `en` and you get English cards instead.
 
 Bad values are rejected on the spot. If things get messy, `config reset` puts everything back.
 
