@@ -48,7 +48,7 @@ Run it once and you get this:
 ```
 ✅ Working. Core capabilities all verified: context compaction, sub-agents, memory files, hooks.
 
-The coding assistant you're already in. Most people use two things: edit code, run commands. The rest — background jobs, parallel sub-agents, automatic context compaction, scripts that fire on specific events — rarely gets touched.
+The coding assistant you're already in. Most people use two things: edit code, run commands. The rest (background jobs, parallel sub-agents, automatic context compaction, scripts that fire on set moments) rarely gets touched.
 
 What you can do
 
@@ -73,11 +73,11 @@ If you remember one thing
     "run this in the background and ping me when it's done"
 ```
 
-That last line is the expensive one. You thought you had to sit and wait.
+The last line alone is worth the whole card. Nobody made you sit and wait.
 
 ### 2. You treat the PDF skill as a text reader
 
-You've used it to pull text and convert pages to images. Then what? Nothing. You assumed "reading" was the whole of it, so tables, forms and redaction never occurred to you as its job.
+You've used it to pull text and convert pages to images. Then what? Nothing. You assumed "reading" was the whole of it, so tables, forms and redaction never crossed your mind as its job.
 
 Run it once and you get this:
 
@@ -109,11 +109,11 @@ If you remember one thing
     "handle this PDF — check first whether it's a real PDF or a scan"
 ```
 
-Line two gives it away: 50 commands. The first gap finding tells you to classify before acting, which plenty of people get backwards.
+Line two gives it away: 50 commands. The first buried capability tells you to classify before acting, which plenty of people get backwards.
 
 ### 3. You only know one way to screen stocks
 
-You know it can "find me some stocks", so you write conditions. The four other entry points — strategies, labels, events, rankings — plus several hundred ready-made categories, have been sitting there the whole time.
+You know it can "find me some stocks", so you write conditions. The four other entry points (strategies, labels, events, rankings) and several hundred ready-made categories have been sitting there the whole time.
 
 Run it once and you get this:
 
