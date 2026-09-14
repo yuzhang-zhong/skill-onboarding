@@ -35,121 +35,139 @@ Then it subtracts: what the tool supports, minus what is installed locally. What
 
 ## Three real cases
 
+These three cards were actually produced. Not mock-ups. Reproduced as written.
+
 ### 1. You have 21 Feishu skills
 
-<table>
-<tr>
-<td width="50%">
+You want a table. You bounce between `lark-sheets`, `lark-base`, and `lark-drive` trying to guess. You want to send a message and cannot tell whether that is `lark-im` or `lark-unified`. You have seen all 21 names and never worked out how they relate.
 
-**Before**
-
-You want a table. You bounce between `lark-sheets`, `lark-base`, and `lark-drive` trying to guess which one.
-
-You want to send a message and cannot tell whether that is `lark-im` or `lark-unified`.
-
-You have seen all 21 names. You have never worked out how they relate.
-
-</td>
-<td width="50%">
-
-**After**
-
-One card.
-
-First line says the 21 skills all sit on a single `lark-cli`, covering 26 domains.
-
-Then you learn it also handles mind notes and slash commands, with no local skill for either, and you can just ask. And that every operation can dry-run before you commit to sending anything.
-
-</td>
-</tr>
-</table>
-
-### 2. You installed an AI-flavor remover and forgot about it
-
-<table>
-<tr>
-<td width="50%">
-
-**Before**
-
-You remember it can flag words like "仿佛", "一丝", "缓缓" in Chinese prose.
-
-What else? No idea.
-
-When you installed it, why you stopped using it, also no idea.
-
-</td>
-<td width="50%">
-
-**After**
-
-Line one tells you the truth: the skill is disabled, you have to enable it before it triggers on its own.
-
-Then you find it carries six named master-prose techniques. You can ask for "rewrite this the way Yu Hua would".
-
-You also learn which edits it does automatically and which ones need a human, so you stop guessing.
-
-</td>
-</tr>
-</table>
-
-### 3. You want a deck and do not know who to ask
-
-<table>
-<tr>
-<td width="50%">
-
-**Before**
-
-`slides`, `design`, `design-system`, `ui-ux-pro-max`. All four look relevant.
-
-You picked `slides` at random, shipped something passable, and never checked whether the other three would have been better.
-
-</td>
-<td width="50%">
-
-**After**
-
-One card turns seven design skills into a single table. Brand tone goes to `brand`. Colors and type scales go to `design-system`. Logos and decks are built into `design`.
-
-It also mentions `ui-ux-pro-max` has three dials you can turn, visual variance, motion intensity, visual density, ten steps each. You would never have guessed that one.
-
-</td>
-</tr>
-</table>
-
-## What a card looks like
+Run it once, and you get this:
 
 ```
-Working. The CLI itself is fine, every self-check passes.
+✅ Working. The CLI itself is fine, every self-check passes. Two things to note: the embedded docs trail the binary by one version, and the app identity currently in effect isn't the one named in the config.
 
-The whole Feishu suite. 26 domains, and your 21 local Feishu skills all sit on
-top of this one command.
+The whole Feishu suite. 26 domains, and your 21 local Feishu skills all sit on top of this one command.
 
 What you can do
 
-    Messages, groups     send, search history, create groups, escalate
+    Messages, groups     send, search history, create groups, add members, pin, SMS/call escalation
     Documents            create, read, insert images, search, restore versions
-    Sheets               read/write cells, verify formulas, charts, pivot tables, import/export
-    Drive                upload, download, move, comments, permissions, two-way sync
-    Calendar, meetings   agenda, free/busy, find rooms, suggest times
-    Tasks                create, complete, remind, lists, attachments
+    Sheets               read/write cells, verify formulas, charts, pivot tables, conditional formatting, import/export
+    Drive                upload, download, move, comments, permissions, two-way folder sync
+    Calendar, meetings   agenda, free/busy, find rooms, suggest times, RSVP, transfer organizer
+    Tasks                create, complete, remind, lists, search, attachments
+    The rest             Wiki, slides, boards, approval, attendance, OKR, mail, all there
 
 What most people miss
 
-    "preview it first"        every operation can dry-run before you commit
-    "check Feishu on my end"  one command covers version, auth, identity, network
-    "agenda and tasks, both"  a built-in combo, one line for today or this week
-    "sync this folder up"     directory-level mirroring, no file-by-file uploads
+    "preview it, don't actually send"    every operation supports dry-run, see the result before you commit
+    "check Feishu on my end"             one command covers version, auth, identity, network, and pinpoints what's wrong
+    "agenda and tasks, both"             a built-in combo, one line for today or this week
+    "publish this Markdown as a doc"     a full pipeline: import, upload images, move each one under its heading, add captions
+    "sync this folder up"                directory-level mirroring and two-way sync, no file-by-file uploads
+    "pivot table and conditional format" the sheets domain runs deeper than you would think
 
 If you remember one thing
 
     "handle this in Feishu for me, preview it first"
 ```
 
-No file paths, no filenames, no provenance anywhere in the card. You want the capability, not its address.
+One line is enough: 21 skills, one tool.
 
-More examples in [`example.md`](example.md).
+### 2. You installed a de-AI-flavor tool and forgot about it
+
+You remember it can flag words like "仿佛", "一丝", "缓缓" in Chinese prose. What else? No idea. When you installed it, why you stopped, also no idea.
+
+Run it once, and you get this:
+
+```
+⚠️ Partially working. The core scanner runs fine, but the skill is disabled and won't trigger on its own, and the follow-up formatting step its docs mention isn't in the package.
+
+A de-AI-flavor tool for Chinese prose. Detection, grading, rewriting. Strong on rule sets, hundreds of banned words plus six named techniques. Weak on automation, most edits need a human call.
+
+What you can do
+
+    "scan these chapters"         quantified report: banned-word density, parallel-structure runs, psych-verb ratio, graded light/medium/heavy
+    "make this not read like AI"  three passes: strip generic words, strip written-language tone, put the natural feel back
+    "something's off, can't name it"    deep layer names the problem type and gives a master-prose fix
+
+What most people miss
+
+    "rewrite this the way Yu Hua would"    six techniques you can name: image instead of interiority, action externalising emotion, plain description over adjectives, setting carrying mood, absence writing presence, action carrying speech
+    "what can it fix by itself"            punctuation runs, overused time-freezes, stacked light verbs and stock phrases get auto-fixed; context-sensitive patterns are reported only, so nothing good gets damaged
+    "how do I actually turn it on"         enable it in skill management first, and read the result yourself after auto-fix
+
+If you remember one thing
+
+    "scan this for AI flavor, fix the heavy parts"
+```
+
+Line one does not cover for it: the skill is disabled, you have to enable it before it triggers.
+
+### 3. You want a deck and do not know who to ask
+
+`slides`, `design`, `design-system`, `ui-ux-pro-max`. All four look relevant. You picked `slides` at random, shipped something passable, and never checked the rest.
+
+Run it once, and you get this:
+
+```
+✅ Working. The built-in lookup libraries check out, style, colour and industry libraries all return real results. Generation needs an external service key, not exercised here.
+
+A whole design pipeline. Brand tone, colour and type, logos, business cards, decks, banners, social images. You have 7 design skills that look related; they're parts of one thing.
+
+What you can do
+
+    Brand tone, voice, guidelines        brand
+    Colour, type and spacing scales      design-system
+    Frontend interfaces                  ui-styling
+    Aesthetic review, kill the AI look   impeccable
+    Generate a full design system        ui-ux-pro-max, 12 domains × 21 stacks
+    Logos, icons, banners                built into design
+    Full corporate identity              built into design, 50 deliverables
+    Decks and pitches                    built into design, with charts
+
+What most people miss
+
+    "what colours should a coffee shop use"    a searchable industry library gives palette, type, symbols, and what to avoid
+    "give me a design brief first"             one line produces a full brief: direction, palette, type, industry conventions
+    "what industries suit this style"          every style lists where it fits and where it doesn't
+    "do the whole corporate identity"          a built-in end-to-end flow, 50 deliverables in one go
+    "make it bolder"                           three dials: visual variance, motion intensity, visual density, 1 to 10 each
+
+If you remember one thing
+
+    "design a visual system for my brand, brief first"
+```
+
+Seven design skills in one table. That last line about the dials, you would never have guessed.
+
+All three cards in full are in [`examples/`](examples/).
+
+## What a card looks like
+
+No decorative symbols, just structure:
+
+```
+<✅ Working ｜ ⚠️ Partially working, reason ｜ ❌ Could not verify, reason>
+<One line: what it's good at, what it isn't>
+
+What you can do
+    action      what you get
+    action      what you get
+
+What most people miss
+    phrase      why it's worth knowing
+    phrase      why it's worth knowing
+
+If you remember one thing
+    the shortest phrase
+```
+
+Two or more skills in one group become a family card, and the second heading becomes a "what do you want to do" list, grouped by what you would actually say.
+
+No file paths, no filenames, no provenance anywhere in a card. You want the capability, not its address.
+
+Format details and more samples in [`example.md`](example.md).
 
 ## Pairs with skill-creator
 
@@ -189,6 +207,8 @@ python scripts/onboarding_state.py config reset          # defaults
 | `family_max_lines` | `60` | Line cap for a family card |
 | `exclude` | `[]` | Skills to skip |
 | `pair_with_skill_creator` | `true` | Verify after a skill is created or edited |
+
+The three cards above are the Chinese output, which is what this machine is configured for. Set `language` to `en` and you get the same cards in English.
 
 Bad values are rejected on the spot. If things get messy, `config reset` puts everything back.
 
