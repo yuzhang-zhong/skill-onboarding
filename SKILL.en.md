@@ -1,7 +1,7 @@
 ---
 name: skill-onboarding
-description: After a user first uses a skill, actually run it once and hand back a "usage card" that surfaces the capabilities buried in its docs. **Pairs with skill-creator**: right after creating or editing a skill with it, run this flow to verify the first run and produce a card, closing the "build → run → card → feedback" loop. CLI tool skills are the priority — one command-line tool is often split across a dozen skills (21 lark-* skills all wrap a single lark-cli), so this merges them into one card and diffs the CLI's own inventory against local skills to find capabilities the user never knew existed. Triggers: first use of a skill, just finished using one, just created or edited a skill with skill-creator, or "what else can this skill do", "how do I use X", "what am I missing", "what else can this CLI do", "what commands don't I know about". Behavior is configurable (language, auto-trigger, card length, exclusion list). Not for skill quality scoring.
-version: 3.3.0
+description: After a user first uses a skill, actually run it once and hand back a "usage card" that surfaces the capabilities buried in its docs. **Pairs with skill-creator**: right after creating or editing a skill with it, run this flow to verify the first run and produce a card, closing the "build → run → card → feedback" loop. Tool skills are the priority — one underlying tool is often split across a dozen skills (and the user can't tell which to use), or the reverse: a single skill hides dozens of commands and the user only remembers the most convenient one. This merges them into one card and diffs the tool's own inventory against local skills to find capabilities the user never knew existed. Triggers: first use of a skill, just finished using one, just created or edited a skill with skill-creator, or "what else can this skill do", "how do I use X", "what am I missing", "what else can this tool do", "what commands don't I know about". Behavior is configurable (language, auto-trigger, card length, exclusion list). Not for skill quality scoring.
+version: 3.4.0
 agent_created: true
 license: MIT
 metadata:
@@ -12,7 +12,7 @@ metadata:
 # skill-onboarding
 
 <p align="center">
-  <strong>After a user first uses a skill: run it once, then hand back one card.</strong>
+  <strong>However well a skill is written, you only ever use the first two lines.</strong>
 </p>
 
 <p align="center">
@@ -58,12 +58,14 @@ quality scoring → neither.
 
 **A group of skills that is really one thing** → **one card for the whole family**. Two signals:
 
-- They share one underlying tool (`lark-im` / `lark-base` / … all resolve to `lark-cli`)
-- They cross-reference each other, or one carries a "sub-skill routing" table (`design` routes out to `brand` / `design-system` / `ui-styling`)
+- They share one underlying tool or service (different names, same interface underneath)
+- They cross-reference each other, or one carries a "sub-skill routing" table (one skill hands work off to several others)
 
 The test isn't "the names look alike" — it's **"the user can't tell which one to use"**.
 
-Skills may live in several different skills directories. Search all of them.
+**The reverse case counts too**: one skill holding dozens of commands or hundreds of options. The user still only ever uses the one path that's most convenient. A card for an overloaded single skill has exactly the same shape as a family card — the second section still groups by what the user would say.
+
+Skills may live in several different skills directories. Search all of them. **Skills installed from the official marketplace count too** — anything outside `~/.workbuddy/skills` still belongs in scope.
 
 Check whether it has already been onboarded:
 
@@ -105,7 +107,7 @@ Environment problems (shell, paths, wrapper) must read "environment issue, worke
 
 ```
 <✅ Working ｜ ⚠️ Partially working, reason ｜ ❌ Could not verify, reason>
-<One line: what it's good at, what it isn't>
+<One line: what it is, what it's good at, what it isn't>
 
 What you can do
     action      what you get
@@ -131,6 +133,8 @@ What you can do
     Decks and pitches   built into design, with charts
 ```
 
+(That shows the grouping shape only — don't copy it verbatim. Real cases live in `examples/`.)
+
 **Rules**
 
 - **No paths, no filenames, no provenance.** Users want capability, not location.
@@ -140,6 +144,8 @@ What you can do
 - Readable in one sitting: single skill ≤40 lines, family card ≤60.
 - For family cards, the "what most people miss" section should lead with **diff findings**: what the tool supports vs what's installed locally. The gap is what the user never knew about.
 - Any problem found must become an actionable next step, not just a complaint.
+- **Choose the number in the first paragraph for maximum "look how little you've used".** Command count, capability-domain count, ready-made category count — whichever lands hardest ("50 commands", "hundreds of ready-made categories"). That sentence is the most valuable one on the card.
+- **The first entry under "what most people miss" should be the one that changes your whole approach** — not an obscure flag, but something that routes you down a different path (classify before acting, narrow before sorting, background instead of waiting).
 
 **Archive**
 
@@ -199,3 +205,4 @@ Hard to break: invalid values are rejected up front, and `config reset` always b
 ## Example
 
 `example.md` — one standard card plus one CLI tool card. Match that density.
+`examples/` — three real cards: a coding assistant, a PDF tool (50 commands), a stock screener (6 entry points). They cover the three typical shapes; use them as reference when writing.

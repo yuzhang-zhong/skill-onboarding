@@ -3,7 +3,11 @@
 </p>
 
 <p align="center">
-  <strong>Use a skill once. Get one card back.</strong>
+  <strong>However well a skill is written, you only ever use the first two lines.</strong>
+</p>
+
+<p align="center">
+  Run it once. Dig out the rest.
 </p>
 
 <p align="center">
@@ -25,9 +29,9 @@ That's the gap this skill closes. The first time you genuinely use a skill, it r
 
 ## A group of skills is usually one thing
 
-Those 21 Feishu skills sit on top of a single command. Those 7 design skills are parts of one tool.
+One tool often gets split across a dozen skills. It goes the other way too: a single skill can hold fifty commands.
 
-A card per skill is pointless. You'd end up with 21 fragments and still no picture. So they get merged.
+Split, and you're holding a dozen faces with no picture of the whole. Crammed into one file, you only remember the one path you use most. Both cost you. So they get merged into one card.
 
 Then it subtracts. What the tool supports, minus what you already have installed. Whatever's left is the part you never knew about.
 
@@ -35,109 +39,113 @@ Then it subtracts. What the tool supports, minus what you already have installed
 
 The three cards below came out of real runs. Not mock-ups. Reproduced word for word.
 
-### 1. You have 21 Feishu skills
+### 1. You use a coding assistant every day and only two of its features
 
-You want a table, so you bounce between `lark-sheets`, `lark-base`, and `lark-drive` trying to guess. You want to send a message and can't tell whether that's `lark-im` or `lark-unified`. You've seen all 21 names and never worked out how they relate.
-
-Run it once and you get this:
-
-```
-✅ Working. The CLI itself is fine, every self-check passes. Two things to note: the embedded docs trail the binary by one version, and the app identity currently in effect isn't the one named in the config.
-
-The whole Feishu suite. 26 domains, and your 21 local Feishu skills all sit on top of this one command.
-
-What you can do
-
-    Messages, groups     send, search history, create groups, add members, pin, SMS/call escalation
-    Documents            create, read, insert images, search, restore versions
-    Sheets               read/write cells, verify formulas, charts, pivot tables, conditional formatting, import/export
-    Drive                upload, download, move, comments, permissions, two-way folder sync
-    Calendar, meetings   agenda, free/busy, find rooms, suggest times, RSVP, transfer organizer
-    Tasks                create, complete, remind, lists, search, attachments
-    The rest             Wiki, slides, boards, approval, attendance, OKR, mail, all there
-
-What most people miss
-
-    "preview it, don't actually send"    every operation supports dry-run, see the result before you commit
-    "check Feishu on my end"             one command covers version, auth, identity, network, and pinpoints what's wrong
-    "agenda and tasks, both"             a built-in combo, one line for today or this week
-    "publish this Markdown as a doc"     a full pipeline: import, upload images, move each one under its heading, add captions
-    "sync this folder up"                directory-level mirroring and two-way sync, no file-by-file uploads
-    "pivot table and conditional format" the sheets domain runs deeper than you'd think
-
-If you remember one thing
-
-    "handle this in Feishu for me, preview it first"
-```
-
-One line is enough: 21 skills, one tool.
-
-### 2. You installed a de-AI-flavor tool and forgot about it
-
-You remember it can flag words like "仿佛", "一丝", "缓缓" in Chinese prose. What else? No idea. When you installed it, why you stopped, also no idea.
+Edit code, run commands. That's it. It can also run jobs in the background, spin up sub-agents, compact its own context, and fire scripts on hooks. You never touched any of that, because the description doesn't mention it.
 
 Run it once and you get this:
 
 ```
-⚠️ Partially working. The core scanner runs fine, but the skill is disabled and won't trigger on its own, and the follow-up formatting step its docs mention isn't in the package.
+✅ Working. Core capabilities all verified: context compaction, sub-agents, memory files, hooks.
 
-A de-AI-flavor tool for Chinese prose. Detection, grading, rewriting. Strong on rule sets, hundreds of banned words plus six named techniques. Weak on automation, most edits need a human call.
+The coding assistant you're already in. Most people use two things: edit code, run commands. The rest — background jobs, parallel sub-agents, automatic context compaction, scripts that fire on specific events — rarely gets touched.
 
 What you can do
 
-    "scan these chapters"         quantified report: banned-word density, parallel-structure runs, psych-verb ratio, graded light/medium/heavy
-    "make this not read like AI"  three passes: strip generic words, strip written-language tone, put the natural feel back
-    "something's off, can't name it"    deep layer names the problem type and gives a master-prose fix
+    Edit code, run commands     the basics, you use these daily
+    Run long jobs in the background     builds, installs, test runs — no waiting, you get notified
+    Parallel sub-agents     several directions at once, independent context, no crowding the main one
+    Compact context automatically     it tidies up before hitting the ceiling; long sessions don't break
+    Write memory files     project conventions and your preferences on disk, loaded into the next session
+    Hooks     scripts that fire at set moments: pre-commit checks, auto-format after an edit
 
 What most people miss
 
-    "rewrite this the way Yu Hua would"    six techniques you can name: image instead of interiority, action externalising emotion, plain description over adjectives, setting carrying mood, absence writing presence, action carrying speech
-    "what can it fix by itself"            punctuation runs, overused time-freezes, stacked light verbs and stock phrases get auto-fixed; context-sensitive patterns are reported only, so nothing good gets damaged
-    "how do I actually turn it on"         enable it in skill management first, and read the result yourself after auto-fix
+    "run this in the background, tell me when it's done"     no babysitting a long command
+    "send three agents at this in parallel"     parallel exploration, far faster than one at a time
+    "remember this rule for the project"     write it to memory, stop repeating yourself
+    "walk me through this project's conventions"     reads memory and config, states it once
+    "run the tests automatically after every edit"     hooks, for anything you keep doing by hand
+    "context is getting full, clean it up"     trigger compaction yourself instead of waiting
 
 If you remember one thing
 
-    "scan this for AI flavor, fix the heavy parts"
+    "run this in the background and ping me when it's done"
 ```
 
-The first line doesn't soften it: the skill is disabled and won't fire until you enable it.
+That last line is the expensive one. You thought you had to sit and wait.
 
-### 3. You want a deck and don't know who to ask
+### 2. You treat the PDF skill as a text reader
 
-`slides`, `design`, `design-system`, `ui-ux-pro-max`. All four look relevant. You picked `slides` at random, shipped something passable, and never checked the rest.
+You've used it to pull text and convert pages to images. Then what? Nothing. You assumed "reading" was the whole of it, so tables, forms and redaction never occurred to you as its job.
 
 Run it once and you get this:
 
 ```
-✅ Working. The built-in lookup libraries check out, style, colour and industry libraries all return real results. Generation needs an external service key, not exercised here.
+⚠️ Partially working. Core commands verified, all 50 registered. OCR and format conversion need system tools installed separately, not done here.
 
-A whole design pipeline. Brand tone, colour and type, logos, business cards, decks, banners, social images. You have 7 design skills that look related; they're parts of one thing.
+An all-in-one PDF tool. 50 commands in six groups: read, edit, convert, forms, encrypt, structure. You thought it read text. It also edits scans, fills forms, redacts, and diffs two versions.
 
 What you can do
 
-    Brand tone, voice, guidelines        brand
-    Colour, type and spacing scales      design-system
-    Frontend interfaces                  ui-styling
-    Aesthetic review, kill the AI look   impeccable
-    Generate a full design system        ui-ux-pro-max, 12 domains × 21 stacks
-    Logos, icons, banners                built into design
-    Full corporate identity              built into design, 50 deliverables
-    Decks and pitches                    built into design, with charts
+    Read           text, tables, images, formulas, layout, reading order
+    Edit           replace, add, delete text; swap images — both text-layer and pure scans
+    Convert        to and from Word / HTML / Markdown / images, plus compress, split, merge, crop, rotate
+    Forms          detect fields, fill fields, fill coordinate-based ones with no fields at all, then flatten
+    Encrypt        password on, password off, redact, stamp a signature
+    Structure      export to JSON for the full picture, rebuild from it, diff two versions
 
 What most people miss
 
-    "what colours should a coffee shop use"    a searchable industry library gives palette, type, symbols, and what to avoid
-    "give me a design brief first"             one line produces a full brief: direction, palette, type, industry conventions
-    "what industries suit this style"          every style lists where it fits and where it doesn't
-    "do the whole corporate identity"          a built-in end-to-end flow, 50 deliverables in one go
-    "make it bolder"                           three dials: visual variance, motion intensity, visual density, 1 to 10 each
+    "is this page a scan or a real PDF"     one command, per page — tells you which path to take
+    "stitch these pages into one long image"     fixed-height screenshots, chat archives, social posts
+    "chunk this for my AI"     four strategies — paragraph, page, fixed, semantic — built for retrieval
+    "black out the ID numbers"     by text, by region, or by regex; clears the text layer underneath too
+    "what changed between these two contracts"     diffs structure and text of two PDFs into a change list
+    "don't let anyone edit this filled form"     one flatten, fields and annotations baked into the page
 
 If you remember one thing
 
-    "design a visual system for my brand, brief first"
+    "handle this PDF — check first whether it's a real PDF or a scan"
 ```
 
-Seven design skills, one table. That last line about the dials, you'd never have guessed.
+Line two gives it away: 50 commands. The first gap finding tells you to classify before acting, which plenty of people get backwards.
+
+### 3. You only know one way to screen stocks
+
+You know it can "find me some stocks", so you write conditions. The four other entry points — strategies, labels, events, rankings — plus several hundred ready-made categories, have been sitting there the whole time.
+
+Run it once and you get this:
+
+```
+⚠️ Partially working. All six query entry points verified, every `--list` returns real results. Without a market data service wired up, results need another source.
+
+Screens stocks and funds across the whole market. You thought it was "find me some stocks". It has six screening modes, each with hundreds to thousands of parameters. Most people know one of them.
+
+What you can do
+
+    By condition     write an expression, e.g. PE under 20 and ROE over 15
+    By strategy      ready-made signals: golden cross, oversold, master strategies, candlestick patterns
+    By label         central SOEs, below-book, recent IPOs, thousand-yuan stocks — hundreds of categories
+    By event         unlocking soon, buying back, joining an index — dozens of event types
+    By ranking       score, limit-up, margin, capital flow leaderboards — and rank within a subset
+    Funds            the same two entry points, switched to ETFs: theme pools and size rankings
+
+What most people miss
+
+    "highest-scoring central SOEs"     narrow the universe, then sort — its most useful move, barely known
+    "lowest valuation among golden crosses"     re-rank inside a strategy result, no manual re-filtering
+    "what's unlocking soon"     events find a stock pool; a calendar finds dates. Different things
+    "margin up five days straight"     a threshold, not a top-N cut. Different business meaning entirely
+    "where does this valuation sit historically"     percentile rankings for funds beat absolute numbers
+    "what did this look like last week"     query a historical date, or a range, to see a list change
+
+If you remember one thing
+
+    "screen me some stocks by condition — show me what conditions exist first"
+```
+
+"Narrow the universe, then sort" is the classic buried capability: it's in the docs, but nobody reads that section.
 
 All three cards in full are in [`examples/`](examples/).
 
