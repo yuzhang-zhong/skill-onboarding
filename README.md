@@ -1,233 +1,147 @@
-<p align="center">
-  <img src="assets/logo.jpg" alt="skill-onboarding" width="200" />
-</p>
+<p align="center"><img src="assets/logo.jpg" alt="skill-onboarding logo" width="144" /></p>
 
-<p align="center">
-  <strong>However well a skill is written, you only ever use the first two lines.</strong>
-</p>
+<div align="center">
 
-<p align="center">
-  Run it once. Dig out the rest.
-</p>
+# skill-onboarding
 
-<p align="center">
-  <strong title="English">🇬🇧</strong> ·
-  <a href="README.zh-CN.md" title="简体中文">🇨🇳</a>
-</p>
+### You installed the skill. Now find the parts you never use.
 
-## You have a pile of skills and use one of them
+Read the whole skill, try a low-risk probe, and turn the useful discoveries into one short usage card.
 
-Skills don't load all at once. When a session starts, only the name and a one-line description make it into context. The rest of the file gets read later, and only if something actually matches. A skill can document eight features and you'll only ever touch the first two. The other six stay invisible.
+**Read → Probe → Card · Single skills or tool families · Python standard library**
 
-That's the gap this skill closes. The first time you genuinely use a skill, it runs the thing for real, reads the whole file, and hands you a card covering the part you never found.
+**English** · [简体中文](README.zh-CN.md)
 
-## Three steps
+[Install](#install-and-try-it) · [See a real card](#a-card-not-another-manual) · [Configure](#configuration) · [Skill instructions](SKILL.en.md)
 
-1. **Pick the target** one skill, or a group
-2. **Probe** read it in full, run read-only probes. Real calls, not guesses
-3. **Write the card** one card you can finish in a sitting
+</div>
 
-## A group of skills is usually one thing
+![Excerpt from the repository's recorded Chinese PDF usage card, including its partial-verification warning and two overlooked capabilities](docs/pdf-card.svg)
 
-One tool often gets split across a dozen skills. It goes the other way too: a single skill can hold fifty commands.
+Skills are often discovered through a name and a short description. That makes the obvious feature easy to find and the rest easy to miss. skill-onboarding reads beyond the description, checks what can actually run in the current environment, and gives you phrases you can use next time.
 
-Split, and you're holding a dozen faces with no picture of the whole. Crammed into one file, you only remember the one path you use most. Both cost you. So they get merged into one card.
+It is **usage discovery, not a quality score**. The state helper tracks onboarding and configuration; an agent performs the reading, probing, and card writing.
 
-Then it subtracts. What the tool supports, minus what you already have installed. Whatever's left is the part you never knew about.
+## Install and try it
 
-## Three real cases
-
-The three cards below came out of real runs. Not mock-ups. Reproduced word for word.
-
-### 1. You use a coding assistant every day and only two of its features
-
-Edit code, run commands. That's it. It can also run jobs in the background, spin up sub-agents, compact its own context, and fire scripts on hooks. You never touched any of that, because the description doesn't mention it.
-
-Run it once and you get this:
-
-```
-✅ Working. Core capabilities all verified: context compaction, sub-agents, memory files, hooks.
-
-The coding assistant you're already in. Most people use two things: edit code, run commands. The rest (background jobs, parallel sub-agents, automatic context compaction, scripts that fire on set moments) rarely gets touched.
-
-What you can do
-
-    Edit code, run commands     the basics, you use these daily
-    Run long jobs in the background     builds, installs, test runs — no waiting, you get notified
-    Parallel sub-agents     several directions at once, independent context, no crowding the main one
-    Compact context automatically     it tidies up before hitting the ceiling; long sessions don't break
-    Write memory files     project conventions and your preferences on disk, loaded into the next session
-    Hooks     scripts that fire at set moments: pre-commit checks, auto-format after an edit
-
-What most people miss
-
-    "run this in the background, tell me when it's done"     no babysitting a long command
-    "send three agents at this in parallel"     parallel exploration, far faster than one at a time
-    "remember this rule for the project"     write it to memory, stop repeating yourself
-    "walk me through this project's conventions"     reads memory and config, states it once
-    "run the tests automatically after every edit"     hooks, for anything you keep doing by hand
-    "context is getting full, clean it up"     trigger compaction yourself instead of waiting
-
-If you remember one thing
-
-    "run this in the background and ping me when it's done"
-```
-
-The last line alone is worth the whole card. Nobody made you sit and wait.
-
-### 2. You treat the PDF skill as a text reader
-
-You've used it to pull text and convert pages to images. Then what? Nothing. You assumed "reading" was the whole of it, so tables, forms and redaction never crossed your mind as its job.
-
-Run it once and you get this:
-
-```
-⚠️ Partially working. Core commands verified, all 50 registered. OCR and format conversion need system tools installed separately, not done here.
-
-An all-in-one PDF tool. 50 commands in six groups: read, edit, convert, forms, encrypt, structure. You thought it read text. It also edits scans, fills forms, redacts, and diffs two versions.
-
-What you can do
-
-    Read           text, tables, images, formulas, layout, reading order
-    Edit           replace, add, delete text; swap images — both text-layer and pure scans
-    Convert        to and from Word / HTML / Markdown / images, plus compress, split, merge, crop, rotate
-    Forms          detect fields, fill fields, fill coordinate-based ones with no fields at all, then flatten
-    Encrypt        password on, password off, redact, stamp a signature
-    Structure      export to JSON for the full picture, rebuild from it, diff two versions
-
-What most people miss
-
-    "is this page a scan or a real PDF"     one command, per page — tells you which path to take
-    "stitch these pages into one long image"     fixed-height screenshots, chat archives, social posts
-    "chunk this for my AI"     four strategies — paragraph, page, fixed, semantic — built for retrieval
-    "black out the ID numbers"     by text, by region, or by regex; clears the text layer underneath too
-    "what changed between these two contracts"     diffs structure and text of two PDFs into a change list
-    "don't let anyone edit this filled form"     one flatten, fields and annotations baked into the page
-
-If you remember one thing
-
-    "handle this PDF — check first whether it's a real PDF or a scan"
-```
-
-Line two gives it away: 50 commands. The first buried capability tells you to classify before acting, which plenty of people get backwards.
-
-### 3. You only know one way to screen stocks
-
-You know it can "find me some stocks", so you write conditions. The four other entry points (strategies, labels, events, rankings) and several hundred ready-made categories have been sitting there the whole time.
-
-Run it once and you get this:
-
-```
-⚠️ Partially working. All six query entry points verified, every `--list` returns real results. Without a market data service wired up, results need another source.
-
-Screens stocks and funds across the whole market. You thought it was "find me some stocks". It has six screening modes, each with hundreds to thousands of parameters. Most people know one of them.
-
-What you can do
-
-    By condition     write an expression, e.g. PE under 20 and ROE over 15
-    By strategy      ready-made signals: golden cross, oversold, master strategies, candlestick patterns
-    By label         central SOEs, below-book, recent IPOs, thousand-yuan stocks — hundreds of categories
-    By event         unlocking soon, buying back, joining an index — dozens of event types
-    By ranking       score, limit-up, margin, capital flow leaderboards — and rank within a subset
-    Funds            the same two entry points, switched to ETFs: theme pools and size rankings
-
-What most people miss
-
-    "highest-scoring central SOEs"     narrow the universe, then sort — its most useful move, barely known
-    "lowest valuation among golden crosses"     re-rank inside a strategy result, no manual re-filtering
-    "what's unlocking soon"     events find a stock pool; a calendar finds dates. Different things
-    "margin up five days straight"     a threshold, not a top-N cut. Different business meaning entirely
-    "where does this valuation sit historically"     percentile rankings for funds beat absolute numbers
-    "what did this look like last week"     query a historical date, or a range, to see a list change
-
-If you remember one thing
-
-    "screen me some stocks by condition — show me what conditions exist first"
-```
-
-"Narrow the universe, then sort" is the classic buried capability: it's in the docs, but nobody reads that section.
-
-All three cards in full are in [`examples/`](examples/).
-
-## What a card looks like
-
-No decorative symbols, just structure:
-
-```
-<✅ Working ｜ ⚠️ Partially working, reason ｜ ❌ Could not verify, reason>
-<One line: what it's good at, what it isn't>
-
-What you can do
-    action      what you get
-    action      what you get
-
-What most people miss
-    phrase      why it's worth knowing
-    phrase      why it's worth knowing
-
-If you remember one thing
-    the shortest phrase
-```
-
-When two or more skills belong together, you get a family card instead. The second heading turns into a list of what you might want to do, grouped by how you'd actually ask for it.
-
-No file paths, no filenames, no provenance anywhere in a card. You want the capability, not its address.
-
-Format details and more samples in [`example.md`](example.md).
-
-## Pairs with skill-creator
-
-```
-skill-creator      create a skill, edit a skill
-skill-onboarding   verify the first run afterwards, hand back one card
-```
-
-Build, run, card, then take whatever the card exposed back to the skill. A missing dependency. Docs that disagree with the code. An ability nobody wrote down clearly. That's what the next round fixes.
-
-Pairing is on by default. After skill-creator creates or edits something, run this before moving on.
-
-The split is simple. Creating, editing, and deleting belong to skill-creator. Running and writing cards belong here. Scoring quality belongs to neither.
-
-## Install
+Example for a WorkBuddy skills directory:
 
 ```bash
 git clone https://github.com/yuzhang-zhong/skill-onboarding.git \
   ~/.workbuddy/skills/skill-onboarding
+cd ~/.workbuddy/skills/skill-onboarding
+python scripts/onboarding_state.py --help
 ```
 
-Point it at your own skills directory. Claude Code uses `~/.claude/skills/`. The state script is pure Python standard library, nothing to install.
+Use your host's actual skills directory instead; for example, Claude Code uses `~/.claude/skills/`. Keep the scripts with the skill. The helper needs Python 3 and no pip dependencies; each target skill may have its own prerequisites. Host support and reload behavior vary.
+
+Then ask your agent:
+
+> Use skill-onboarding on the skill I just used. Read the full instructions, try a safe read-only probe, and give me one card with the useful capabilities I missed. Mark anything you could not verify.
+
+The default card language is Chinese. For English cards, run this from the cloned directory:
+
+```bash
+python scripts/onboarding_state.py config set language en
+```
+
+## A card, not another manual
+
+A card answers four questions:
+
+| Part | What you learn |
+| --- | --- |
+| Status + short description | Working, partially working, or unverified, with the reason |
+| What you can do | Actions and their useful outputs |
+| What most people miss | Copyable phrases that reveal a different way to use the tool |
+| If you remember one thing | The shortest useful prompt |
+
+The illustration above is a **typeset excerpt of the existing [PDF card](examples/pdf.md)**, not a new test or a product screenshot. Its recorded warning is important: core commands were checked in that run, but OCR and conversion dependencies were not installed. Historical examples do not prove that those tools work in your environment today.
+
+<details>
+<summary>Read the excerpt in English</summary>
+
+Translation of selected lines from the recorded card:
+
+```text
+Partially working. Core commands were tested; all 50 commands registered.
+OCR and format conversion need additional system tools, not installed in that run.
+
+What most people miss
+    Is this a scan or a digital PDF?
+    Classify each page first, then choose the right path.
+
+    How do these two versions of the contract differ?
+    Compare PDF structure and text to produce a change list.
+
+If you remember one thing
+    Help me handle this PDF. First check whether it is digital or scanned.
+```
+
+</details>
+
+### Explore the three recorded examples
+
+| Example | Hidden capability to look for | Evidence caveat |
+| --- | --- | --- |
+| [Coding assistant](examples/claude-code.md) | Background work, sub-agents, memory, and hooks | Records the original environment, not every agent host |
+| [PDF tool](examples/pdf.md) | Classify before acting; forms, redaction, and version comparison | OCR / conversion prerequisites were not installed |
+| [Stock screener](examples/stock-screener.md) | Narrow a universe, then rank; multiple query entry points | A separate market-data source is still needed in an unconfigured environment |
+
+The full cards remain in their original files. They are examples of the output style, not bundled PDF, coding, or finance tools, and not investment recommendations.
+
+## How it works
+
+1. **Choose the scope.** One skill, one overloaded tool, or a family that shares a service.
+2. **Read and probe.** Read the full skill and relevant reference filenames; try low-cost, read-only help, status, dry-run, or synthetic-input checks where appropriate.
+3. **Write one card.** Separate verified and blocked capabilities, use natural-language prompts, and keep the result short.
+
+A dozen skills for one tool should not become a dozen disconnected cards. A family card groups capabilities by what you want to accomplish, then looks for the gap between the underlying tool's capability list and locally wrapped skills. This comparison depends on an inspectable capability list; missing tools or permissions remain explicit limitations.
 
 ## Configuration
 
+Run from this repository's directory, or use the script's full path:
+
 ```bash
-python scripts/onboarding_state.py config                # show
-python scripts/onboarding_state.py config set <key> <v>  # change
-python scripts/onboarding_state.py config reset          # defaults
+python scripts/onboarding_state.py config
+python scripts/onboarding_state.py config set <key> <value>
+python scripts/onboarding_state.py config reset
 ```
 
 | Key | Default | Effect |
-|---|---|---|
-| `language` | `zh` | Card language, `zh` / `en` / `auto` |
+| --- | --- | --- |
+| `language` | `zh` | Card language: `zh`, `en`, or `auto` |
 | `auto_trigger` | `true` | Offer a card after a first run |
-| `max_lines` | `40` | Line cap for one card |
-| `family_max_lines` | `60` | Line cap for a family card |
+| `max_lines` | `40` | Single-card line cap |
+| `family_max_lines` | `60` | Tool-family card line cap |
 | `exclude` | `[]` | Skills to skip |
-| `pair_with_skill_creator` | `true` | Verify after a skill is created or edited |
+| `pair_with_skill_creator` | `true` | Verify after creating or editing a skill |
 
-Those three cards above are in Chinese, because that's what this setup is configured for. Set `language` to `en` and you get English cards instead.
+The script validates supported values and types. Configuration, state, and cards use `~/.workbuddy/skill-onboarding/`, **even if the skill itself is installed under another host's directory**. Auto-trigger and pairing are instructions for a compatible agent to follow, not a background daemon installed by this repository.
 
-Bad values are rejected on the spot. If things get messy, `config reset` puts everything back.
+### Avoid repeat onboarding
 
-## Who it is for
+```bash
+python scripts/onboarding_state.py check pdf
+python scripts/onboarding_state.py list --json
+python scripts/onboarding_state.py new
+```
 
-| | Audience | Output |
-|---|---|---|
-| `skill-creator` | authors | create and iterate skills |
-| `skill-tester` and friends | authors | structure checks, quality scores |
-| **this skill** | **users** | **a card after the first run** |
+`check` returns `NEW`, `SEEN`, or `SKIP`. The workflow writes a card before marking it with `mark <skill-name>`. Use `reset <skill-name>` to remove that onboarding record, or `reset --all` to clear the records. All commands support `--json`. The helper does not generate cards by itself.
 
-Judging whether a skill is good is somebody else's job. This one only works out how you should use it.
+## Pairs with skill-creator
+
+**Create / edit → run a safe check → write the card → feed discoveries back into the skill.**
+
+Creation, editing, and deletion belong to skill-creator. First-use verification and usage cards belong here. Quality scoring belongs to neither. Pairing is enabled in the default configuration.
+
+## Boundaries
+
+- Prefer read-only probes and synthetic data. Do not use a demonstration as permission to send messages, place orders, change production data, or expose private material.
+- When verification would require a consequential external action, stop at a prepared request and label it unexecuted unless the host's authorization rules permit execution.
+- Do not call an untested capability verified. Distinguish missing dependencies, environment problems, and tool failures.
+- Keep cards brief and user-facing; detailed format guidance is in [`example.md`](example.md). No feature inventory needs to be padded to hit a line count.
 
 ## License
 
-MIT.
+[MIT](LICENSE).
