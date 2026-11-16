@@ -1,18 +1,22 @@
-<p align="center"><img src="assets/logo.jpg" alt="skill-onboarding logo" width="144" /></p>
-
 <div align="center">
+
+<img src="assets/logo.jpg" alt="skill-onboarding logo" width="144" />
 
 # skill-onboarding
 
-### You installed the skill. Now find the parts you never use.
+**You installed the skill. Now find the parts you never use.**
 
 Read the whole skill, try a low-risk probe, and turn the useful discoveries into one short usage card.
 
-**Read → Probe → Card · Single skills or tool families · Python standard library**
+**Read → Probe → Card**
+
+[![Python](https://img.shields.io/badge/Helper-Python_standard_library-3776AB)](scripts/onboarding_state.py)
+[![Scope](https://img.shields.io/badge/Scope-Skills_%26_tool_families-2563eb)](#how-it-works)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 **English** · [简体中文](README.zh-CN.md)
 
-[Install](#install-and-try-it) · [See a real card](#a-card-not-another-manual) · [Configure](#configuration) · [Skill instructions](SKILL.en.md)
+[Install](#install-and-try-it) · [See a real card](#a-card-not-another-manual) · [Examples](#explore-the-three-recorded-examples) · [Configure](#configuration) · [Boundaries](#boundaries) · [Skill instructions](SKILL.en.md)
 
 </div>
 

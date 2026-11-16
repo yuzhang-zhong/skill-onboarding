@@ -1,18 +1,22 @@
-<p align="center"><img src="assets/logo.jpg" alt="skill-onboarding 标志" width="144" /></p>
-
 <div align="center">
+
+<img src="assets/logo.jpg" alt="skill-onboarding 标志" width="144" />
 
 # skill-onboarding
 
-### skill 装好了，没发现的能力呢？
+**skill 装好了，没发现的能力呢？**
 
 读完技能全文，跑一次低风险探测，把真正有用的发现收进一张用法卡。
 
-**读 → 跑 → 卡 · 单技能 / 工具族 · Python 标准库**
+**读 → 跑 → 卡**
+
+[![Python](https://img.shields.io/badge/状态脚本-Python_标准库-3776AB)](scripts/onboarding_state.py)
+[![范围](https://img.shields.io/badge/范围-单技能_%2F_工具族-2563eb)](#怎么工作)
+[![许可证](https://img.shields.io/badge/许可证-MIT-green)](LICENSE)
 
 [English](README.md) · **简体中文**
 
-[安装试用](#安装试用) · [看一张真实卡片](#给你一张卡不是再写一本手册) · [配置](#配置) · [技能说明](SKILL.md)
+[安装试用](#安装试用) · [看一张真实卡片](#给你一张卡不是再写一本手册) · [案例](#三个已记录的案例) · [配置](#配置) · [边界](#边界) · [技能说明](SKILL.md)
 
 </div>
 
