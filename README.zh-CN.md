@@ -1,26 +1,21 @@
 <div align="center">
 
-<img src="assets/logo.jpg" alt="skill-onboarding 标志" width="144" />
+<img src="assets/logo.jpg" alt="skill-onboarding 标志" width="96" />
 
 # skill-onboarding
 
-**skill 装好了，没发现的能力呢？**
+**看看装好的技能，在你的环境里还能怎么用。**
 
 读完技能全文，跑一次低风险探测，把真正有用的发现收进一张用法卡。
 
-**读 → 跑 → 卡**
-
 [![Python](https://img.shields.io/badge/状态脚本-Python_标准库-3776AB)](scripts/onboarding_state.py)
-[![范围](https://img.shields.io/badge/范围-单技能_%2F_工具族-2563eb)](#怎么工作)
 [![许可证](https://img.shields.io/badge/许可证-MIT-green)](LICENSE)
 
 [English](README.md) · **简体中文**
 
-[安装试用](#安装试用) · [看一张真实卡片](#给你一张卡不是再写一本手册) · [案例](#三个已记录的案例) · [配置](#配置) · [边界](#边界) · [技能说明](SKILL.md)
+[安装试用](#安装试用) · [卡片示例](#给你一张卡不是再写一本手册) · [案例](#三个已记录的案例) · [配置](#配置)
 
 </div>
-
-![仓库现有 PDF 用法卡的节选排版：保留部分可用的验证警告，并展示两项容易忽略的能力](docs/pdf-card.svg)
 
 很多 skill 靠名字和一句描述被发现。显眼的功能很容易用上，藏在正文和参考文件里的功能却很容易错过。skill-onboarding 不只看描述：它读全文，检查当前环境里哪些能力真的能跑，再给你下次可以直接说出口的用法。
 
@@ -49,7 +44,10 @@ python scripts/onboarding_state.py --help
 python scripts/onboarding_state.py config set language en
 ```
 
-## 给你一张卡，不是再写一本手册
+<a id="给你一张卡不是再写一本手册"></a>
+## 用法卡片
+
+![仓库现有 PDF 用法卡的节选排版：保留部分可用的验证警告，并展示两项容易忽略的能力](docs/pdf-card.svg)
 
 | 部分 | 回答什么 |
 | --- | --- |
@@ -95,6 +93,8 @@ python scripts/onboarding_state.py config set language en
 3. **出一张卡。** 分清验证成功与受阻的部分，用自然语言口令表达，写到一口气读完为止。
 
 同一个工具拆成十几个 skill，不该再变成十几张互不相干的卡。工具族卡按「你想做什么」组织能力，再比较底层工具的能力清单与本地已封装的技能，找出漏掉的部分。前提是能读取能力清单；缺工具、缺权限的情况必须明说。
+
+完整流程见 [`SKILL.md`](SKILL.md)。单技能卡和工具族卡都需要遵守[探测边界](#边界)。
 
 ## 配置
 

@@ -1,26 +1,21 @@
 <div align="center">
 
-<img src="assets/logo.jpg" alt="skill-onboarding logo" width="144" />
+<img src="assets/logo.jpg" alt="skill-onboarding logo" width="96" />
 
 # skill-onboarding
 
-**You installed the skill. Now find the parts you never use.**
+**Discover what an installed skill can do in your environment.**
 
 Read the whole skill, try a low-risk probe, and turn the useful discoveries into one short usage card.
 
-**Read → Probe → Card**
-
 [![Python](https://img.shields.io/badge/Helper-Python_standard_library-3776AB)](scripts/onboarding_state.py)
-[![Scope](https://img.shields.io/badge/Scope-Skills_%26_tool_families-2563eb)](#how-it-works)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 **English** · [简体中文](README.zh-CN.md)
 
-[Install](#install-and-try-it) · [See a real card](#a-card-not-another-manual) · [Examples](#explore-the-three-recorded-examples) · [Configure](#configuration) · [Boundaries](#boundaries) · [Skill instructions](SKILL.en.md)
+[Install](#install-and-try-it) · [Usage card](#a-card-not-another-manual) · [Examples](#explore-the-three-recorded-examples) · [Configure](#configuration)
 
 </div>
-
-![Excerpt from the repository's recorded Chinese PDF usage card, including its partial-verification warning and two overlooked capabilities](docs/pdf-card.svg)
 
 Skills are often discovered through a name and a short description. That makes the obvious feature easy to find and the rest easy to miss. skill-onboarding reads beyond the description, checks what can actually run in the current environment, and gives you phrases you can use next time.
 
@@ -49,7 +44,10 @@ The default card language is Chinese. For English cards, run this from the clone
 python scripts/onboarding_state.py config set language en
 ```
 
-## A card, not another manual
+<a id="a-card-not-another-manual"></a>
+## The usage card
+
+![Excerpt from the repository's recorded Chinese PDF usage card, including its partial-verification warning and two overlooked capabilities](docs/pdf-card.svg)
 
 A card answers four questions:
 
@@ -101,6 +99,8 @@ The full cards remain in their original files. They are examples of the output s
 3. **Write one card.** Separate verified and blocked capabilities, use natural-language prompts, and keep the result short.
 
 A dozen skills for one tool should not become a dozen disconnected cards. A family card groups capabilities by what you want to accomplish, then looks for the gap between the underlying tool's capability list and locally wrapped skills. This comparison depends on an inspectable capability list; missing tools or permissions remain explicit limitations.
+
+Full instructions: [`SKILL.en.md`](SKILL.en.md). The [probe boundaries](#boundaries) apply to both single-skill and tool-family cards.
 
 ## Configuration
 
