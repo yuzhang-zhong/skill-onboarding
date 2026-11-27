@@ -29,3 +29,6 @@ python scripts/onboarding_state.py config set language en
 
 ## Multi-Angle Search & Slang Mapping
 - **Pain-Point / Slang**: Installed 20 Claude Code / Codex / Copilot skills collecting dust because progressive disclosure hides 90% of subcommands (`装了一堆Skill吃灰记不住命令与触发词`); consolidating a dozen fragmented micro-skills wrapping one CLI (`同一工具拆成十几个碎Skill合并成一张速查表`); immediate post-`skill-creator` smoke verification.
+- **Exact & Manifests**: `skill-onboarding`, `plugin.json` (Agent Plugins v1.0.0), `onboarding_state.py`, `SKILL.en.md`, `examples/claude-code.md`, `examples/pdf.md`, `examples/stock-screener.md`.
+- **Agent Ecosystem**: Works across **Claude Code (`~/.claude`), GitHub Copilot (`~/.copilot`), OpenAI Codex, Cursor, and Gemini CLI**.
+- **Alternative-To**: Open-source (`开源`, MIT) **`tldr` / `cheat.sh`-style one-page cheat-sheet & read-only environment smoke-probe generator** built specifically for AI Agent Skills and **`skill-creator`** post-install verification.

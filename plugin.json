@@ -11,13 +11,21 @@
   "repository": "https://github.com/yuzhang-zhong/skill-onboarding",
   "license": "MIT",
   "keywords": [
-    "skill-onboarding",
-    "cheat-sheet",
-    "usage-card",
-    "skill-creator",
-    "hidden-features",
-    "capability-discovery",
+    "agent-skills",
+    "agent-skill",
     "meta-skill",
-    "cli-companion"
+    "claude-skill",
+    "copilot-skill",
+    "codex-skill",
+    "cursor-skill",
+    "onboarding",
+    "cheat-sheet",
+    "quick-reference",
+    "skill-creator",
+    "cli-companion",
+    "environment-probe",
+    "capability-discovery",
+    "developer-tools",
+    "productivity"
   ]
 }

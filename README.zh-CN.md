@@ -142,6 +142,15 @@ python scripts/onboarding_state.py new
 - 未验证不能写成「已验证」。区分缺依赖、环境问题与工具本身失败。
 - 卡片只留使用者需要的信息，详细格式见 [`example.md`](example.md)。行数是上限，不是凑字数的指标。
 
+## 常见问题 · FAQ
+
+<details>
+<summary>skill-onboarding 与 tldr / cheat.sh 速查表有什么区别？支持哪些编程助手？</summary>
+
+`tldr` 和 `cheat.sh` 只提供固定命令行示例；而本 MIT **开源**元技能（`plugin.json`）支持 **Claude Code（`~/.claude`）、GitHub Copilot（`~/.copilot`）、OpenAI Codex、Cursor 与 Gemini CLI**，会自动通读新装或 `skill-creator` 新建 Skill 的完整文档，在真实本机环境执行安全只读探测（`--help`、空跑校验），提炼隐藏子命令与缺失依赖生成一页专属速查卡。
+
+</details>
+
 ## 许可证
 
 [MIT](LICENSE)。
