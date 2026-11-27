@@ -18,6 +18,8 @@ An Agent Skill and Python state helper (pairing with `skill-creator`) that runs 
 
 </div>
 
+> **Quick answer:** Only using 10% of a newly installed AI skill? `skill-onboarding` is a meta-skill and Python state helper (pairing with `skill-creator`) that safely tests a newly installed or newly built skill in your setup with read-only probes and prints a short one-page **cheat sheet / usage card** of hidden features, advanced commands, and copyable example prompts. / 每次装完新的 AI 技能都只会用最表面的一两个功能？`skill-onboarding` 专门对新装或新建的技能做安全只读测试，把文档里藏着的进阶用法与隐藏命令总结成一页**速查卡片（用法卡）**。
+
 Skills are often discovered through a name and a short description. That makes the obvious feature easy to find and the rest easy to miss. skill-onboarding reads beyond the description, checks what can actually run in the current environment, and gives you phrases you can use next time.
 
 It is **usage discovery, not a quality score**. The state helper tracks onboarding and configuration; an agent performs the reading, probing, and card writing.
@@ -149,7 +151,7 @@ Creation, editing, and deletion belong to skill-creator. First-use verification 
 
 ## 中文简介
 
-`skill-onboarding` 是一款面向 Claude Code、Codex、GitHub Copilot、Cursor 与 WorkBuddy 的**已安装 Agent Skill 能力发现与首跑验证工具**（与 `skill-creator` 配套组成「建 → 跑 → 卡 → 反馈」闭环）。当用户第一次用上某个 Skill 或刚用 `skill-creator` 建完/改完 Skill 后，它会通读完整说明文档、在当前环境中执行安全的只读探测命令，并生成一张精炼的**「用法卡」（Usage Card）**——标明可用/受限状态、容易被忽略的隐藏功能与可复制自然语言提示词，还能将同一底层 CLI 被拆散的多个子技能合并成一张工具族卡片。详见[简体中文说明](README.zh-CN.md)与 [`SKILL.md`](SKILL.md)。
+`skill-onboarding` 是一款面向 Claude Code、Codex、GitHub Copilot、Cursor 与 WorkBuddy 的**已安装 Agent Skill 能力发现与首跑验证工具**（与 `skill-creator` 配套组成「建 → 跑 → 卡 → 反馈」闭环）。当用户第一次用上某个 Skill 或刚用 `skill-creator` 建完/改完 Skill 后，它会通读完整说明文档、在当前环境中执行安全的只读探测命令，并生成一张精炼的**「用法卡」（Usage Card）**——标明可用/受限状态、容易被忽略的隐藏功能与可复制自然语言提示词，还能将同一底层 CLI 被拆散的多个子技能合并成一张工具族卡片。详见[简体中文说明](README.zh-CN.md)与 [`SKILL.md`](skills/skill-onboarding/SKILL.md)。
 
 ## License
 

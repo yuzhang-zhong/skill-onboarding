@@ -1,6 +1,6 @@
 ---
 name: skill-onboarding
-description: "Discover what a newly installed or newly built Agent Skill can actually do in your environment: read its full docs, run a safe read-only probe, and generate a concise 'usage card' surfacing hidden capabilities, missing prerequisites, and copyable prompts (pairs with skill-creator for build -> verify -> usage card -> feedback loops, and merges fragmented CLI tool-family skills). 用户第一次用某个 skill 之后，真跑一次验证并给一张'用法卡'，把埋在文档里的能力挖出来。与 skill-creator 配套：建完或改完 skill 后紧接着做首跑验证并出卡。触发：第一次用某 skill、刚用完一个 skill、刚建完或改完 skill、或问'这 skill 还能干什么''有什么隐藏用法''还有哪些命令我不知道'。"
+description: "Meta-skill and Python state helper for when you only use 10% of a newly installed or newly built AI Agent Skill: safely test the skill in your setup with read-only probes and generate a concise one-page cheat sheet (usage card / quick-reference card) of hidden features, advanced commands, missing prerequisites, and example prompts. Pairs with skill-creator and merges fragmented CLI tool-family skills. 每次装完新AI技能只会用表面一两个功能？专门测试新装技能或新建技能（与skill-creator配套），做安全只读探测，把文档里藏着的进阶用法与隐藏命令总结成一页速查卡片（用法卡/速查表）。"
 version: 3.4.0
 agent_created: true
 license: MIT

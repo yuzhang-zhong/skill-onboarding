@@ -1,6 +1,25 @@
 {
   "name": "skill-onboarding",
   "version": "3.4.0",
-  "description": "Probe newly installed or newly built Agent Skills in your environment and generate a concise capability usage card of hidden features and prompts (pairs with skill-creator).",
-  "skills": ["../SKILL.md"]
+  "description": "Meta-skill and Python helper that safely tests newly installed or newly built AI skills with read-only probes and prints a one-page cheat sheet (usage card) of hidden features and prompts.",
+  "author": {
+    "name": "yuzhang-zhong"
+  },
+  "homepage": "https://github.com/yuzhang-zhong/skill-onboarding",
+  "repository": "https://github.com/yuzhang-zhong/skill-onboarding",
+  "keywords": [
+    "agent-skill",
+    "skill-onboarding",
+    "cheat-sheet",
+    "usage-card",
+    "skill-creator",
+    "hidden-features",
+    "capability-discovery",
+    "meta-skill",
+    "cli-companion"
+  ],
+  "skills": [
+    "./skills/skill-onboarding"
+  ],
+  "license": "MIT"
 }

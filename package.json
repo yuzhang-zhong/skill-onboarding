@@ -1,0 +1,27 @@
+{
+  "name": "skill-onboarding",
+  "version": "3.4.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Meta-skill and Python state helper that safely tests a newly installed or newly built AI Agent Skill and prints a concise one-page cheat sheet (usage card) of hidden features and example prompts.",
+  "repository": "github:yuzhang-zhong/skill-onboarding",
+  "keywords": [
+    "agent-skill",
+    "agent-skills",
+    "claude-skill",
+    "codex-skill",
+    "copilot-skill",
+    "cheat-sheet",
+    "usage-card",
+    "quick-reference",
+    "skill-creator",
+    "hidden-features",
+    "onboarding",
+    "meta-skill"
+  ],
+  "pi": {
+    "skills": [
+      "./skills/skill-onboarding"
+    ]
+  }
+}
