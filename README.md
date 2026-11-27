@@ -6,7 +6,8 @@
 
 **Discover what an installed skill can do in your environment.**
 
-Read the whole skill, try a low-risk probe, and turn the useful discoveries into one short usage card.
+An Agent Skill and Python state helper (pairing with `skill-creator`) that runs a safe read-only probe right after you install or build a skill and hands back a concise one-page usage card of hidden capabilities and prompts.<br>
+在刚安装好或用 `skill-creator` 建完 Agent Skill（技能）后自动做安全只读探测、挖掘文档隐藏功能与用法并生成一页「用法卡」的工具 Skill。
 
 [![Python](https://img.shields.io/badge/Helper-Python_standard_library-3776AB)](scripts/onboarding_state.py)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
