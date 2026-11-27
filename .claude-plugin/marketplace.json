@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    {
+      "name": "skill-onboarding",
+      "description": "Probe newly installed or newly built Agent Skills in your environment and generate a concise capability usage card of hidden features and prompts (pairs with skill-creator).",
+      "version": "3.4.0",
+      "path": ".."
+    }
+  ]
+}

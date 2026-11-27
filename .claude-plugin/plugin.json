@@ -1,0 +1,8 @@
+{
+  "name": "skill-onboarding",
+  "version": "3.4.0",
+  "description": "Probe newly installed or newly built Agent Skills in your environment and generate a concise capability usage card of hidden features and prompts (pairs with skill-creator).",
+  "author": "yuzhang-zhong",
+  "license": "MIT",
+  "skills": ["../SKILL.md"]
+}

@@ -1,6 +1,6 @@
 ---
 name: skill-onboarding
-description: 用户第一次用某个 skill 之后，真跑一次验证并给一张"用法卡"，把埋在文档里的能力挖出来。**与 skill-creator 配套**：用它建完或改完 skill 后紧接着跑一次本流程做首跑验证并出卡，形成"建 → 跑 → 卡 → 反馈"闭环。工具类 skill 是重点——同一个底层工具常被拆成十几个 skill（用户分不清该用哪个），也有反过来的，一个 skill 里塞了几十个命令，用户只记得最顺手的那一条；本 skill 合并成一张卡，并对比工具自带的清单找出本地没封装、用户不知道的能力。触发：第一次用某 skill、刚用完一个 skill、刚用 skill-creator 建完或改完 skill、或说"这 skill 还能干什么""XX 怎么用""有什么我不知道的用法""这个工具还能干什么""还有哪些命令我不知道"。行为可通过配置调整（语言、自动触发、卡片长度、排除名单）。不适用于 skill 质量打分。
+description: "Discover what a newly installed or newly built Agent Skill can actually do in your environment: read its full docs, run a safe read-only probe, and generate a concise 'usage card' surfacing hidden capabilities, missing prerequisites, and copyable prompts (pairs with skill-creator for build -> verify -> usage card -> feedback loops, and merges fragmented CLI tool-family skills). 用户第一次用某个 skill 之后，真跑一次验证并给一张'用法卡'，把埋在文档里的能力挖出来。与 skill-creator 配套：建完或改完 skill 后紧接着做首跑验证并出卡。触发：第一次用某 skill、刚用完一个 skill、刚建完或改完 skill、或问'这 skill 还能干什么''有什么隐藏用法''还有哪些命令我不知道'。"
 version: 3.4.0
 agent_created: true
 license: MIT
