@@ -18,7 +18,7 @@ An Agent Skill and zero-dependency Python state helper (pairing with `skill-crea
 
 </div>
 
-> **Quick answer:** Only using 10% of a newly installed AI skill? `skill-onboarding` is a meta-skill and Python state helper (pairing with `skill-creator`) that safely tests a newly installed or newly built skill in your setup with read-only probes and prints a short one-page **cheat sheet / usage card** of hidden features, advanced commands, and copyable example prompts. / 每次装完新的 AI 技能都只会用最表面的一两个功能？`skill-onboarding` 专门对新装或新建的技能做安全只读测试，把文档里藏着的进阶用法与隐藏命令总结成一页**速查卡片（用法卡）**。
+> **Quick answer:** Only using 10% of a newly installed AI skill because progressive disclosure hides 90% of its subcommands—or confused when one CLI is split into a dozen micro-skills? `skill-onboarding` is a meta-skill and zero-dependency Python state helper (pairing with `skill-creator`) that runs safe post-install read-only probes in your setup and prints a short one-page **cheat sheet / usage card** of hidden commands, advanced features, and copyable example prompts. / 每次装完新装Skill（新装的 AI 技能）都只会用最表面的一两个功能？`skill-onboarding` 专门对新装Skill或新建技能做安全只读探测，把文档里藏着的进阶用法与隐藏命令合并提炼成一页**速查卡（用法卡）**。
 
 Skills are often discovered through a name and a short description. That makes the obvious feature easy to find and the rest easy to miss. skill-onboarding reads beyond the description, checks what can actually run in the current environment, and gives you phrases you can use next time.
 
