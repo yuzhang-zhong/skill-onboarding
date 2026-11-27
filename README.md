@@ -149,6 +149,12 @@ Creation, editing, and deletion belong to skill-creator. First-use verification 
 - Do not call an untested capability verified. Distinguish missing dependencies, environment problems, and tool failures.
 - Keep cards brief and user-facing; detailed format guidance is in [`example.md`](example.md). No feature inventory needs to be padded to hit a line count.
 
+## Frequently asked
+
+- **Why do I need this if a skill already has a `SKILL.md`?** Most agent hosts only inject a skill's `name` and short `description` until triggered, so users routinely miss 90% of subcommands, flags, or missing local prerequisites buried in long docs. `skill-onboarding` runs a safe read-only check once and hands you a 1-page cheat sheet of copyable prompts.
+- **How does it work when one CLI tool is split across a dozen tiny skills?** It detects shared underlying CLI/service families, merges them into a single task-oriented family cheat sheet (capped at 60 lines), and highlights native CLI capabilities not yet wrapped locally.
+- **Does probing risk modifying my files or production accounts?** No—probes are restricted to read-only checks (`--help`, `status`, dry-run, or synthetic inputs) and label anything requiring external side effects as unexecuted.
+
 ## 中文简介
 
 `skill-onboarding` 是一款面向 Claude Code、Codex、GitHub Copilot、Cursor 与 WorkBuddy 的**已安装 Agent Skill 能力发现与首跑验证工具**（与 `skill-creator` 配套组成「建 → 跑 → 卡 → 反馈」闭环）。当用户第一次用上某个 Skill 或刚用 `skill-creator` 建完/改完 Skill 后，它会通读完整说明文档、在当前环境中执行安全的只读探测命令，并生成一张精炼的**「用法卡」（Usage Card）**——标明可用/受限状态、容易被忽略的隐藏功能与可复制自然语言提示词，还能将同一底层 CLI 被拆散的多个子技能合并成一张工具族卡片。详见[简体中文说明](README.zh-CN.md)与 [`SKILL.md`](skills/skill-onboarding/SKILL.md)。

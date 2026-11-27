@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use or reference this project, please cite it using the metadata below."
+type: software
+title: "skill-onboarding: Post-Install Agent Skill Capability Probe and One-Page Cheat-Sheet Generator"
+authors:
+  - family-names: "Zhong"
+    given-names: "Yuzhang"
+repository-code: "https://github.com/yuzhang-zhong/skill-onboarding"
+url: "https://github.com/yuzhang-zhong/skill-onboarding"
+license: "MIT"
+abstract: "Installable meta-skill (skills/skill-onboarding/SKILL.md) and zero-dependency Python 3 state helper that pairs with skill-creator to safely probe newly installed or newly built AI Agent Skills in the user's environment and generate a concise one-page cheat sheet (usage card) surfacing hidden commands, missing dependencies, and copyable prompts."
+keywords:
+  - "agent-skill"
+  - "skill-onboarding"
+  - "skill-creator"
+  - "cheat-sheet"
+  - "usage-card"
+  - "capability-discovery"
+  - "hidden-features"
+  - "meta-skill"
+  - "claude-code"
+  - "codex"
