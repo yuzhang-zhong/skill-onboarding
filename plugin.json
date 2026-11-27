@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "skill-onboarding",
+  "description": "Post-install Agent Skill and Python state helper (pairs with skill-creator) that runs safe read-only probes and generates a concise 1-page capability cheat sheet.",
+  "version": "3.4.0",
+  "author": {
+    "name": "Yuzhang Zhong",
+    "url": "https://github.com/yuzhang-zhong"
+  },
+  "homepage": "https://github.com/yuzhang-zhong/skill-onboarding",
+  "repository": "https://github.com/yuzhang-zhong/skill-onboarding",
+  "license": "MIT",
+  "keywords": [
+    "skill-onboarding",
+    "cheat-sheet",
+    "usage-card",
+    "skill-creator",
+    "hidden-features",
+    "capability-discovery",
+    "meta-skill",
+    "cli-companion"
+  ]
+}
